@@ -23,9 +23,16 @@ dataset_config = BaseDatasetConfig(
     name="ljspeech", meta_file_train="metadata.csv", path=os.path.join(output_path, "../LJSpeech-1.1/")
 )
 
+# Change Here -> Vakyansh -> define audio sample rate
+
+from TTS.tts.configs import BaseAudioConfig
+
+audio_config = BaseAudioConfig(sample_rate = 16000)
+
 # INITIALIZE THE TRAINING CONFIGURATION
 # Configure the model. Every config class inherits the BaseTTSConfig.
 config = GlowTTSConfig(
+    audio=audio_config
     batch_size=32,
     eval_batch_size=16,
     num_loader_workers=4,
@@ -35,13 +42,15 @@ config = GlowTTSConfig(
     epochs=1000,
     text_cleaner="phoneme_cleaners",
     use_phonemes=True,
-    phoneme_language="en-us",
+    phoneme_language="en-us", # Change Here -> Vakyansh
     phoneme_cache_path=os.path.join(output_path, "phoneme_cache"),
     print_step=25,
     print_eval=False,
     mixed_precision=True,
     output_path=output_path,
     datasets=[dataset_config],
+    characters=None,
+    save_step=500
 )
 
 # INITIALIZE THE AUDIO PROCESSOR

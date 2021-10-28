@@ -35,3 +35,6 @@ def chinese_text_to_phonemes(text: str) -> str:
             results += list(token)
 
     return "|".join(results)
+
+
+# Change Here -> Vakyansh add phonemizer for punjabi or language in which you want to proceed.

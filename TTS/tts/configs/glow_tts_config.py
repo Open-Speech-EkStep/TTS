@@ -172,6 +172,7 @@ class GlowTTSConfig(BaseTTSConfig):
     # testing
     test_sentences: List[str] = field(
         default_factory=lambda: [
+            # Change Here -> Vakyansh
             "It took me quite a long time to develop a voice, and now that I have it I'm not going to be silent.",
             "Be a voice, not an echo.",
             "I'm sorry Dave. I'm afraid I can't do that.",

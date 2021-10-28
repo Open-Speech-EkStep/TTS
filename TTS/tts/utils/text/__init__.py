@@ -7,7 +7,7 @@ from typing import Dict, List
 import gruut
 
 from TTS.tts.utils.text import cleaners
-from TTS.tts.utils.text.chinese_mandarin.phonemizer import chinese_text_to_phonemes
+from TTS.tts.utils.text.chinese_mandarin.phonemizer import chinese_text_to_phonemes # Change Here -> Vakyansh-> import phonemizer
 from TTS.tts.utils.text.japanese.phonemizer import japanese_text_to_phonemes
 from TTS.tts.utils.text.symbols import _bos, _eos, _punctuations, make_symbols, phonemes, symbols
 
@@ -50,6 +50,9 @@ def text2phone(text, language, use_espeak_phonemes=False):
     if language == "ja-jp":
         ph = japanese_text_to_phonemes(text)
         return ph
+
+    # Change Here -> Vakyansh
+    # Give language support for phonemizer here
 
     if gruut.is_language_supported(language):
         # Use gruut for phonemization

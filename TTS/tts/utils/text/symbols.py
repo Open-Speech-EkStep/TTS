@@ -38,7 +38,7 @@ def make_symbols(
 _pad = "_"
 _eos = "~"
 _bos = "^"
-_characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!'(),-.:;? "
+_characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!'(),-.:;? " # Change Here -> Vakyansh -> remove hard coding from here to the language in which you want to change your TTS to.
 _punctuations = "!'(),-.:;? "
 
 # Phonemes definition (All IPA characters)
