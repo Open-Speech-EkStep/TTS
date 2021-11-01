@@ -173,8 +173,9 @@ class TTSDataset(Dataset):
     def _load_or_generate_phoneme_sequence(
         wav_file, text, phoneme_cache_path, enable_eos_bos, cleaners, language, custom_symbols, characters, add_blank
     ):
+    
         file_name = os.path.splitext(os.path.basename(wav_file))[0]
-
+        print("File: ", file_name)
         # different names for normal phonemes and with blank chars.
         file_name_ext = "_blanked_phoneme.npy" if add_blank else "_phoneme.npy"
         cache_path = os.path.join(phoneme_cache_path, file_name + file_name_ext)

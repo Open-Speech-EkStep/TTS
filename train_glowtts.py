@@ -8,7 +8,7 @@ from TTS.trainer import Trainer, TrainingArgs
 from TTS.tts.configs.glow_tts_config import GlowTTSConfig
 
 # BaseDatasetConfig: defines name, formatter and path of the dataset.
-from TTS.tts.configs.shared_configs import BaseDatasetConfig
+from TTS.tts.configs.shared_configs import BaseAudioConfig, BaseDatasetConfig
 from TTS.tts.datasets import load_tts_samples
 from TTS.tts.models.glow_tts import GlowTTS
 from TTS.utils.audio import AudioProcessor
@@ -25,7 +25,7 @@ dataset_config = BaseDatasetConfig(
 
 # Change Here -> Vakyansh -> define audio sample rate
 
-from TTS.tts.configs import BaseAudioConfig
+#from TTS.tts.configs import BaseAudioConfig
 
 audio_config = BaseAudioConfig(sample_rate = 48000)
 
@@ -42,7 +42,7 @@ config = GlowTTSConfig(
     epochs=1000,
     text_cleaner="phoneme_cleaners",
     use_phonemes=True,
-    phoneme_language="en-us", # Change Here -> Vakyansh
+    phoneme_language="hi", # Change Here -> Vakyansh
     phoneme_cache_path=os.path.join(output_path, "phoneme_cache"),
     print_step=25,
     print_eval=False,

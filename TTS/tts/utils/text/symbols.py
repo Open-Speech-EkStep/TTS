@@ -38,7 +38,10 @@ def make_symbols(
 _pad = "_"
 _eos = "~"
 _bos = "^"
-_characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!'(),-.:;? " # Change Here -> Vakyansh -> remove hard coding from here to the language in which you want to change your TTS to.
+with open('/home/harveen/coqui/data/male/chars.txt', encoding='utf-8') as file:
+    chars = file.read()
+
+_characters = chars+"!'(),-.:;? " # Change Here -> Vakyansh -> remove hard coding from here to the language in which you want to change your TTS to.
 _punctuations = "!'(),-.:;? "
 
 # Phonemes definition (All IPA characters)
